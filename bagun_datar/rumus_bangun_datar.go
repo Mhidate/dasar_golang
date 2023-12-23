@@ -1,0 +1,5 @@
+package bagundatar
+
+func persegi(){
+	
+}
