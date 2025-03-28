@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
 func main() {
 
@@ -11,4 +14,11 @@ func main() {
 	var integer int = int(num) // Hanya mengambil bagian bulatnya
 
 	fmt.Println(integer)
+
+	str := "100"
+	num2, err := strconv.Atoi(str) // Konversi string ke int
+	if err == nil {
+		fmt.Println(num2) // Output: 100
+	}
+
 }
