@@ -21,4 +21,9 @@ func main() {
 		fmt.Println(num2) // Output: 100
 	}
 
+	num3 := 100
+	str2 := strconv.Itoa(num3) // Konversi int ke string
+
+	fmt.Println(str2) // Output: "100"
+
 }
