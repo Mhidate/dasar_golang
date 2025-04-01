@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 func main() {
 	fmt.Println("Belajar operasi matematika")
@@ -15,4 +18,15 @@ func main() {
 	fmt.Println("Perkalian:", a*b)
 	fmt.Println("Pembagian:", c/d)
 	fmt.Println("Modulus:", a%b)
+	fmt.Println("------------------")
+
+	fmt.Println("Operasi matematika menggunakan paket math")
+
+	fmt.Println("Nilai absolut:", math.Abs(-10.5))
+	fmt.Println("Pangkat:", math.Pow(2, 3))
+	fmt.Println("Akar kuadrat:", math.Sqrt(25))
+	fmt.Println("Pembulatan ke atas:", math.Ceil(4.3))
+	fmt.Println("Pembulatan ke bawah:", math.Floor(4.3))
+	fmt.Println("Pembulatan ke terdekat:", math.Round(4.3))
+
 }
