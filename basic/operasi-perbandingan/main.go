@@ -12,5 +12,7 @@ func main() {
 	fmt.Println("Apakah a != b?", a != b)
 	fmt.Println("Apakah a > b?", a > b)
 	fmt.Println("Apakah a < b?", a < b)
+	fmt.Println("Apakah a < b?", a <= b)
+	fmt.Println("Apakah a < b?", a >= b)
 
 }
