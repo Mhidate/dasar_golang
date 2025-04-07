@@ -40,4 +40,16 @@ func main() {
 
 	// Hapus
 	delete(warga, "RT")
+
+	//cara buat map berurutan dengan cara digabungkan dengan slice
+	keys := []string{"a", "b", "c"}
+	values := map[string]string{
+		"a": "Alpha",
+		"b": "Bravo",
+		"c": "Charlie",
+	}
+
+	for _, k := range keys {
+		fmt.Println(k, values[k])
+	}
 }
