@@ -2,6 +2,11 @@ package main
 
 import "fmt"
 
+type Materi struct {
+	Kode  string
+	Judul string
+}
+
 func main() {
 	fmt.Println("Belajar tipe data slice")
 
@@ -21,4 +26,13 @@ func main() {
 	// Slicing
 	bagian := buah[1:3] // ["mangga", "jeruk"]
 	fmt.Println("Bagian:", bagian)
+
+	//slice of struct
+	materi := []Materi{
+		{"06", "Multiple Main Function"},
+		{"07", "Tipe Data: Number"},
+		{"08", "Tipe Data: Boolean"},
+	}
+
+	fmt.Println(materi)
 }
