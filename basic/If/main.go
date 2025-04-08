@@ -30,4 +30,15 @@ func main() {
 		fmt.Println("Pendek")
 	}
 
+	data := map[string]string{
+		"username": "johndoe",
+		"email":    "john@example.com",
+	}
+
+	if val, ok := data["email"]; ok {
+		fmt.Println("Email ditemukan:", val)
+	} else {
+		fmt.Println("Email tidak ditemukan")
+	}
+
 }
