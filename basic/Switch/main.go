@@ -70,4 +70,16 @@ func main() {
 			fmt.Println("you need to learn more3")
 		}
 	}
+
+	//Short Statement di Switch
+	//variabel angka hanya berlaku di dalam blok switch tersebut.
+	switch angka := 5; angka {
+	case 1:
+		fmt.Println("Satu")
+	case 5:
+		fmt.Println("Lima")
+	default:
+		fmt.Println("Tidak diketahui")
+	}
+
 }
