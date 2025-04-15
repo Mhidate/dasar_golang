@@ -73,6 +73,28 @@ func cetakSemua(data []interface{}) {
 	}
 }
 
+//parameter map berisi slice
+func cetakMapSlice(data map[string][]string) {
+	for kategori, daftar := range data {
+		fmt.Println("Kategori:", kategori)
+		for i, item := range daftar {
+			fmt.Printf("  %d. %s\n", i+1, item)
+		}
+	}
+}
+
+// parameter slice of struct
+type Produk struct {
+	Nama  string
+	Harga int
+}
+
+func cetakDaftarProduk(produk []Produk) {
+	for i, p := range produk {
+		fmt.Printf("%d. %s - Rp%d\n", i+1, p.Nama, p.Harga)
+	}
+}
+
 func main() {
 	fmt.Println("Belajar function parameter")
 
@@ -112,5 +134,19 @@ func main() {
 
 	koleksi := []interface{}{"Teks", 42, true}
 	cetakSemua(koleksi)
+
+	tersedia := map[string][]string{
+		"Buah":    {"Apel", "Pisang", "Jeruk"},
+		"Sayur":   {"Bayam", "Wortel"},
+		"Minuman": {"Air", "Teh", "Kopi"},
+	}
+	cetakMapSlice(tersedia)
+
+	daftar := []Produk{
+		{"Laptop", 10000000},
+		{"Smartphone", 5000000},
+		{"Headset", 250000},
+	}
+	cetakDaftarProduk(daftar)
 
 }
