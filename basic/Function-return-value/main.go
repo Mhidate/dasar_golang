@@ -5,6 +5,9 @@ import "fmt"
 func tambah(a int, b int) int {
 	return a + b
 }
+func salam(nama string) string {
+	return "Halo, selamat siang " + nama
+}
 
 func main() {
 	fmt.Println("Belajar function return value")
@@ -14,5 +17,7 @@ func main() {
 
 	hasil := tambah(3, 4)
 	fmt.Println("Hasil:", hasil)
+
+	fmt.Println(salam("Jhone"))
 
 }
