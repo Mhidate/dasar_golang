@@ -25,6 +25,13 @@ func biodata(umur int, bio ...string) {
 
 }
 
+func biodata2(umur int, bio map[string]string) {
+	fmt.Println("Nama   :", bio["Nama"])
+	fmt.Println("Alamat :", bio["Alamat"])
+	fmt.Println("Status :", bio["Status"])
+	fmt.Println("Umur   :", umur)
+}
+
 func main() {
 	fmt.Println("Belajar tetang variadic function")
 
@@ -37,5 +44,13 @@ func main() {
 	cetak("halo,jangan lupa cari kerja", ",jangan mencuri", "waulaupun lagi susah")
 
 	biodata(30, "John", "London", "Lajang")
+
+	data := map[string]string{
+		"Nama":   "Aldo",
+		"Alamat": "Jakarta",
+		"Status": "Mahasiswa",
+	}
+
+	biodata2(25, data)
 
 }
