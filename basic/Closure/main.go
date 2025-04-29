@@ -33,9 +33,9 @@ func main() {
 
 	hitung := counter()
 
-	fmt.Println(hitung())
-	fmt.Println(hitung())
-	fmt.Println(hitung())
+	fmt.Printf("Angka %d \n", hitung())
+	fmt.Printf("Angka %d \n", hitung())
+	fmt.Printf("Angka %d \n", hitung())
 
 	kaliDua := kelipatan(2)
 	kaliTiga := kelipatan(3)
