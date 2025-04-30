@@ -3,9 +3,9 @@ package main
 import "fmt"
 
 func counter() func() int {
-	angka := 0
+	angka := 0 // <-- ini disebut variabel di scope luar oleh closure-nya (function anonymous di bawah)
 
-	return func() int {
+	return func() int { // closure mengakses variabel 'angka' yang berada di scope fungsi buatCounter
 		angka++
 		return angka
 	}
@@ -14,6 +14,22 @@ func counter() func() int {
 func kelipatan(kali int) func(int) int {
 	return func(nilai int) int {
 		return nilai * kali
+	}
+}
+
+func luar() func() func() int {
+	angka := 0
+	fmt.Println("Scope luar dibuat")
+
+	// Function tengah
+	return func() func() int {
+		fmt.Println("Scope tengah dibuat")
+
+		// Function dalam (closure)
+		return func() int {
+			angka++
+			return angka
+		}
 	}
 }
 
@@ -42,4 +58,13 @@ func main() {
 
 	fmt.Println(kaliDua(5))
 	fmt.Println(kaliTiga(5))
+
+	// Panggil function luar
+	tengah := luar()  // bikin scope luar
+	dalam := tengah() // bikin scope tengah
+
+	// Eksekusi closure
+	fmt.Println("Hasil pertama:", dalam())
+	fmt.Println("Hasil kedua  :", dalam())
+	fmt.Println("Hasil ketiga :", dalam())
 }
