@@ -19,15 +19,19 @@ func kelipatan(kali int) func(int) int {
 
 func luar() func() func() int {
 	angka := 0
+	nama := "Jhon"
 	fmt.Println("Scope luar dibuat")
 
 	// Function tengah
 	return func() func() int {
+		kota := "London"
 		fmt.Println("Scope tengah dibuat")
 
 		// Function dalam (closure)
 		return func() int {
 			angka++
+			fmt.Println("Halo,", nama, "dari", kota)
+			fmt.Println("Counter sekarang:", angka)
 			return angka
 		}
 	}
