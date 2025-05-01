@@ -1,0 +1,2 @@
+[2025-05-01 16:47:20] Menyimpan log ke file log.txt
+[2025-05-01 17:01:35] Menyimpan log ke file log.txt

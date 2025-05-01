@@ -36,4 +36,5 @@ func main() {
 	defer tangkapPanic()
 	panic("Terjadi error fatal")
 	fmt.Println("Program selesai") // tidak jalan
+
 }
