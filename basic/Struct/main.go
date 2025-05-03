@@ -13,6 +13,11 @@ type User struct {
 	Alamat Alamat
 }
 
+func cetakUser(u User) {
+	fmt.Println("Nama:", u.Nama)
+	fmt.Println("Umur:", u.Umur)
+}
+
 func main() {
 
 	fmt.Println("Belajar tentang struct")
@@ -30,4 +35,21 @@ func main() {
 		},
 	}
 	fmt.Println(u)
+
+	fmt.Println(u.Nama)
+	fmt.Println(u.Alamat.Jalan)
+
+	cetakUser(u)
+
+	//struct anonim
+	animal := struct {
+		Nama    string
+		Habitat string
+	}{
+		Nama:    "Hiu",
+		Habitat: "Laut",
+	}
+
+	fmt.Println(animal)
+
 }
