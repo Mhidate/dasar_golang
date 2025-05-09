@@ -7,12 +7,23 @@ type Hewan interface {
 	Bersuara() // Semua yang disebut Hewan harus bisa Bersuara
 }
 
+// Interface  atau Inheritance
+type Mamalia interface {
+	Hewan // mewarisi method Bersuara()
+	Menyusui()
+}
+
 // Ini struct Kucing
 type Kucing struct{}
 
 // Kucing mengikuti aturan Hewan (punya method Bersuara)
+//Method (function milik struct)
 func (k Kucing) Bersuara() {
 	fmt.Println("Meong!") // Cara Kucing bersuara
+}
+
+func (k Kucing) Menyusui() {
+	fmt.Println("Kucing menyusui anaknya")
 }
 
 // Ini struct Anjing
@@ -21,6 +32,10 @@ type Anjing struct{}
 // Anjing juga mengikuti aturan Hewan
 func (a Anjing) Bersuara() {
 	fmt.Println("Guk Guk!")
+}
+
+func (a Anjing) Menyusui() {
+	fmt.Println("Anjing menyusui anaknya")
 }
 
 //Ini struct burung
@@ -45,5 +60,10 @@ func main() {
 
 	SuaraHewan(kucing)
 	SuaraHewan(anjing)
+
+	var kucing2 Mamalia = Kucing{}
+	kucing2.Menyusui()
+	var anjing2 Mamalia = Anjing{}
+	anjing2.Menyusui()
 
 }
