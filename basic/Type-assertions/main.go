@@ -24,6 +24,34 @@ func cekTipe(data interface{}) {
 	}
 }
 
+// Struct pertama
+type User struct {
+	Nama string
+	Umur int
+}
+
+// Struct kedua
+type Produk struct {
+	Nama  string
+	Harga int
+}
+
+// Fungsi cekData menerima interface kosong
+func cekData(data interface{}) {
+	switch value := data.(type) {
+	case User:
+		fmt.Println("Ini data User")
+		fmt.Println("Nama:", value.Nama)
+		fmt.Println("Umur:", value.Umur)
+	case Produk:
+		fmt.Println("Ini data Produk")
+		fmt.Println("Nama Produk:", value.Nama)
+		fmt.Println("Harga:", value.Harga)
+	default:
+		fmt.Println("Tipe data tidak dikenal")
+	}
+}
+
 func main() {
 	fmt.Println("Belajar Type assertions")
 
@@ -39,4 +67,9 @@ func main() {
 	cekTipe([]string{"apel", "jeruk", "mangga"})
 	cekTipe(map[string]int{"a": 1, "b": 2})
 	cekTipe(nil)
+
+	// Kirim struct ke fungsi cekData
+	cekData(User{"Budi", 25})
+	cekData(Produk{"Laptop", 7500000})
+	cekData("string biasa")
 }
