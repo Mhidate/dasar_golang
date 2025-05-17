@@ -17,12 +17,31 @@ func ubahNama(u *User, namaBaru string) {
 func main() {
 	fmt.Println("Belajar Asterisk Operator di pointer")
 
-	angka := 10
-	fmt.Println("Sebelum:", angka)
+	/*
+		Asterisk (*) operator dalam Go memiliki dua fungsi utama terkait pointer:
+		 mendeklarasikan pointer dan mendereferensikan pointer.
+	*/
 
-	tambahLima(&angka)
+	// Deklarasi variabel biasa
+	var angka int = 10
 
-	fmt.Println("Sesudah:", angka)
+	// Deklarasi pointer: p adalah pointer ke int
+	var p *int = &angka
+
+	fmt.Println("Alamat angka:", &angka) // Tampilkan alamat memori angka
+	fmt.Println("Isi pointer (alamat angka):", p)
+	fmt.Println("Nilai di alamat pointer (nilai angka):", *p)
+
+	// Ubah nilai lewat dereference pointer
+	*p = 20
+	fmt.Println("Nilai angka setelah diubah lewat pointer:", angka)
+
+	angka2 := 10
+	fmt.Println("Sebelum:", angka2)
+
+	tambahLima(&angka2)
+
+	fmt.Println("Sesudah:", angka2)
 
 	user := User{"Budi"}
 	ubahNama(&user, "Andi")
