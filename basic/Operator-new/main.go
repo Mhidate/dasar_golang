@@ -7,6 +7,22 @@ type User struct {
 	Umur int
 }
 
+// Function untuk ubah nilai string lewat pointer
+func ubahNama(nama *string) {
+	*nama = "Dino"
+}
+
+// Function untuk tambah umur lewat pointer
+func tambahUmur(umur *int) {
+	*umur += 1
+}
+
+// Function untuk ubah struct lewat pointer
+func updateUser(u *User) {
+	u.Nama = "Eka"
+	u.Umur = 30
+}
+
 func main() {
 	fmt.Println("Belajar Operator new di pointer")
 
@@ -46,4 +62,33 @@ func main() {
 
 	fmt.Println("Nama user2 setelah diisi:", ptrUser2.Nama)
 	fmt.Println("Umur user2 setelah diisi:", ptrUser2.Umur)
+
+	///contoh dengan fungsi
+	nama := "Budi"
+	fmt.Println("Nama sebelum diubah:", nama)
+
+	ubahNama(&nama)
+	fmt.Println("Nama setelah diubah:", nama)
+
+	umur := new(int)
+	*umur = 25
+	fmt.Println("\nUmur sebelum tambah:", *umur)
+
+	tambahUmur(umur)
+	fmt.Println("Umur setelah tambah:", *umur)
+
+	user2 := User{"Dewi", 22}
+	fmt.Println("\nUser1 sebelum update:", user2)
+
+	updateUser(&user2)
+	fmt.Println("User1 setelah update:", user2)
+
+	user3 := new(User)
+	user3.Nama = "Rina"
+	user3.Umur = 20
+
+	fmt.Println("\nUser2 sebelum update:", *user3)
+
+	updateUser(user3)
+	fmt.Println("User2 setelah update:", *user3)
 }
