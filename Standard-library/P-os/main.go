@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
+	"os/exec"
 )
 
 func main() {
@@ -72,4 +73,37 @@ func main() {
 	// 9. Working directory
 	dir, _ := os.Getwd()
 	fmt.Println("Current directory:", dir)
+
+	// 10. Ambil lokasi file notepad.exe
+	cmd := exec.Command("where", "notepad.exe")
+	output, _ := cmd.Output()
+	fmt.Println(string(output))
+
+	// 11. Buka Notepad
+	cmd2 := exec.Command("notepad.exe")
+	err2 := cmd2.Start()
+	if err2 != nil {
+		fmt.Println("Gagal buka Notepad:", err2)
+		return
+	}
+	fmt.Println("Notepad dibuka.")
+
+	// 12. Buka Kalkulator
+	cmd3 := exec.Command("calc.exe")
+	err3 := cmd3.Start()
+	if err3 != nil {
+		fmt.Println("Gagal buka Kalkulator:", err3)
+		return
+	}
+	fmt.Println("Kalkulator dibuka.")
+
+	// 13. Buka folder pakai Explorer
+	path2 := "C:\\Windows"
+	cmd4 := exec.Command("explorer.exe", path2)
+	err4 := cmd4.Start()
+	if err != nil {
+		fmt.Println("Gagal buka folder:", err4)
+		return
+	}
+	fmt.Println("Explorer dibuka ke folder:", path2)
 }
