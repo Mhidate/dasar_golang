@@ -1,8 +1,10 @@
 package main
 
 import (
+	"encoding/base64"
 	"encoding/json"
 	"fmt"
+	"os"
 )
 
 type User struct {
@@ -33,5 +35,20 @@ func main() {
 	var u User
 	json.Unmarshal(jsonData, &u)
 	fmt.Println(u.Nama, u.Umur)
+
+	//Encode gambar ke base64
+	// Baca file gambar
+	data, err := os.ReadFile("gambar.svg")
+	if err != nil {
+		fmt.Println("Gagal baca gambar:", err)
+		return
+	}
+
+	// Encode ke Base64
+	encoded := base64.StdEncoding.EncodeToString(data)
+
+	// Tampilkan hasil Base64
+	fmt.Println("Hasil Base64:")
+	fmt.Println(encoded)
 
 }
