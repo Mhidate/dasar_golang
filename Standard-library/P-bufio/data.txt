@@ -1,0 +1,11 @@
+Belajar bufio 
+
+ini 1
+ini 2
+ini 3
+ini 4
+ini 5
+ini 6
+ini 7
+ini 8
+ini 9
