@@ -28,4 +28,8 @@ func main() {
 	*/
 
 	fmt.Println(slug.Make(text))
+
+	text2 := slug.Make("Hellö Wörld хелло ворлд")
+	fmt.Println(text2)
+
 }
