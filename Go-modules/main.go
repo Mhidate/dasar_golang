@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 
+	"github.com/Mhidate/kalk"
 	"github.com/gosimple/slug"
 )
 
@@ -31,5 +32,7 @@ func main() {
 
 	text2 := slug.Make("Hellö Wörld хелло ворлд")
 	fmt.Println(text2)
+
+	fmt.Println(kalk.Penjumlahan(10, 45))
 
 }

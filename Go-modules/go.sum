@@ -1,3 +1,5 @@
+github.com/Mhidate/kalk v1.0.0 h1:y2iVEInQ+9F87aEFzeNQcOTHxf1a+UQ9o28dB/15C50=
+github.com/Mhidate/kalk v1.0.0/go.mod h1:iZd3wSLT0b0nWN91t8BjLDlAwhFx3l7Y9g34VoG+Dbs=
 github.com/gosimple/slug v1.15.0 h1:wRZHsRrRcs6b0XnxMUBM6WK1U1Vg5B0R7VkIf1Xzobo=
 github.com/gosimple/slug v1.15.0/go.mod h1:UiRaFH+GEilHstLUmcBgWcI42viBN7mAb818JrYOeFQ=
 github.com/gosimple/unidecode v1.0.1 h1:hZzFTMMqSswvf0LBJZCZgThIZrpDHFXux9KeGmn6T/o=
